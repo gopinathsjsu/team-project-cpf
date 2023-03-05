@@ -51,5 +51,23 @@
 
 {"_id":{"$oid":"6455e82936ed8bbbda4122a8"},"location":"Las Vegas","address":"9326 W Sahara Ave STE 4, Las Vegas, NV 89117"}
 
+## Users Model
 
+{"id":{"$oid":"64555b8b8648824c963e1707"},"firstName":"Salt","lastName":"Bae","email":"salt@bae.com","password":"$2b$10$BEFCHjZts83wWhftwg9mV.kYMKwEgrSG5NmgGYPCKpVUCJqn65jj2","phoneNumber":{"$numberDouble":"2679164820.0"},"location":"Chut","isEmployee":true,"_v":{"$numberInt":"0"}}
+
+{"id":{"$oid":"6455c1ce20b90e56f4b0f167"},"firstName":"Davis","lastName":"Anthony","email":"anthony@davis.com","password":"$2b$10$wePoW7A9S8q0uTAqp11JLeBjQCQqMtoVNaQjRoLpygmV6mpqpR6ya","phoneNumber":{"$numberDouble":"2783745667.0"},"location":"Cupertino","isEmployee":true,"membershipId":{"$numberInt":"3"},"_v":{"$numberInt":"0"}}
+
+{"id":{"$oid":"6457506f109d93a5f822cbd2"},"firstName":"Russel","lastName":"Dlo","email":"russel@gmail.com","password":"$2b$10$ZTZThlzyWjpFSFKfLK2KXugZPR5H7.9vZ8No/rgbhF1d2fm8zeeFy","phoneNumber":{"$numberDouble":"6675665332.0"},"location":"California","isEmployee":false,"membershipId":{"$numberInt":"3"},"_v":{"$numberInt":"0"}}
+
+{"id":{"$oid":"645754eeb833423bd8485c74"},"firstName":"Farazuddin","lastName":"Mohammad","email":"farazuddin.m99@gmail.com","password":"$2b$10$6AEdGzmCDGIhZ9HE.AgL5.TxZnMWcYGAF9dddgHpZ2PSxZoSspPGG","phoneNumber":{"$numberDouble":"4085922855.0"},"location":"San Jose","isEmployee":true,"membershipId":{"$numberInt":"1"},"_v":{"$numberInt":"0"}}
+
+## User-Schedules
+
+{"id":{"$oid":"64574c24109d93a5f822cb75"},"userId":{"$oid":"64555b8b8648824c963e1707"},"classId":{"$oid":"6456aef4447b1a8ac1534755"},"schedule":["Tuesday 8:00 - 9:00","Wednesday 8:00 - 9:00","Friday 8:00 - 9:00","Sunday 9:00 - 11:00"],"fromDate":"2023-05-01","toDate":"2023-05-20","locationId":{"$oid":"6455e81d36ed8bbbda4122a7"},"isDeleted":true,"_v":{"$numberInt":"0"}}
+
+{"id":{"$oid":"64574c37109d93a5f822cb81"},"userId":{"$oid":"64555b8b8648824c963e1707"},"classId":{"$oid":"6456afa7447b1a8ac1534756"},"schedule":["Friday 8:00 - 9:00"],"fromDate":"2023-05-18","toDate":"2023-06-03","locationId":{"$oid":"6455e7f936ed8bbbda4122a5"},"isDeleted":false,"_v":{"$numberInt":"0"}}
+
+{"id":{"$oid":"64574cab109d93a5f822cbb5"},"userId":{"$oid":"64555b8b8648824c963e1707"},"classId":{"$oid":"6456aef4447b1a8ac1534755"},"schedule":["Tuesday 8:00 - 9:00","Friday 8:00 - 9:00"],"fromDate":"2023-05-15","toDate":"2023-05-26","locationId":{"$oid":"6455e82936ed8bbbda4122a8"},"isDeleted":false,"_v":{"$numberInt":"0"}}
+
+{"id":{"$oid":"64575266109d93a5f822cbfb"},"userId":{"$oid":"6457506f109d93a5f822cbd2"},"classId":{"$oid":"6456afd0447b1a8ac1534757"},"schedule":["Wednesday 8:00 - 9:00","Saturday 9:00 - 11:00"],"fromDate":"2023-06-06","toDate":"2023-07-08","locationId":{"$oid":"6455e81336ed8bbbda4122a6"},"isDeleted":false,"_v":{"$numberInt":"0"}}
 

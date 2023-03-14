@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "private": true,
+  "description": "Gym Management Monorepo for CMPE 202",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "yarn workspaces foreach -pv run start"
+  },
+  "volta": {
+    "node": "16.20.0",
+    "yarn": "4.0.0-rc.42"
+  }
+}

@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "start": "yarn workspaces foreach -pv run start",
-    "start:frontend": "yarn workspace @gym/frontend start"
+    "start:frontend": "yarn workspace @gym/frontend start",
+    "start:backend": "yarn workspace @gym/backend start"
   },
   "volta": {
     "node": "16.20.0",

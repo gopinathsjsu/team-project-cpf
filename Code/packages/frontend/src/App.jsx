@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Routes, Route, BrowserRouter, useParams } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Home from "./components/Home";
+import Footer from "./components/Footer";
+import Feature from "./components/Feature";
+import Offer from "./components/Offer";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Membership from "./components/Membership";
+import EmployeeHome from "./components/Employeehomepage";
+import Freetrail from "./components/freeTrail";
+import CheckIn from "./components/Checkin";
+import Class from "./components/Classschedule";
+import Schedule from "./components/Class";
+import Schedules from "./components/schedule";
+import Location from "./components/location";
+import Members from "./components/members";
+import ClassAnalytics from "./components/ClassAnalytics";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <Navbar></Navbar>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/feature" element={<Feature />} />
+        <Route path="/offer" element={<Offer />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/employeehome" element={<EmployeeHome />} />
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/freetrail" element={<Freetrail />} />
+        <Route path="/membership" element={<Membership />} />
+        <Route path="/checkin" element={<CheckIn />} />
+        <Route path="/class" element={<Class />} />
+        <Route path="/location" element={<Location />} />
+        <Route path="/members" element={<Members />} />
+        <Route path="/classAnalytics" element={<ClassAnalytics />} />
+
+        <Route path="/schedule/:id" element={<Schedule />} />
+        <Route path="/schedules/:id" element={<Schedules />} />
+
+        {/* <Route path="/schedule/" element={<Schedule />} /> */}
+      </Routes>
+
+      <Footer></Footer>
+    </div>
+  );
 }
 
-export default App
+export default App;

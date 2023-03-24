@@ -22,6 +22,8 @@ import Location from "./components/location";
 import Members from "./components/members";
 import ClassAnalytics from "./components/ClassAnalytics";
 import MyEquipment from "./components/MyEquipment";
+import MyEquipments from "./components/MyEquipments"
+
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
         <Route path="/members" element={<Members />} />
         <Route path="/classAnalytics" element={<ClassAnalytics />} />
         <Route path="/myequipment/:id" element ={<MyEquipment/>}/>
+        <Route path="/myequipments" element ={<MyEquipments/>}/>
+
 
         <Route path="/schedule/:id" element={<Schedule />} />
         <Route path="/schedules/:id" element={<Schedules />} />

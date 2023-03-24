@@ -11,6 +11,9 @@ connection();
 app.use(express.json());
 app.use(cors());
 
+app.use("/api/location", locationRoutes);
+
+
 const port = 8080;
 app.listen(port, console.log(`Listening on port ${port}...`));
 

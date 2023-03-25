@@ -16,21 +16,38 @@ function MyButton(props) {
 }
 const Myanalytics = () => {
     const [activities, setActivities] = useState([]);
-    const [hoursbyweek, setHoursByWeek]=useState({"sunday":[],"Monday":[], "Tuesday":[],"Wednesday":[],"Thursday":[],"Friday":[],"saturday":[]});
+    const [hoursbyweek, setHoursByWeek]=useState({"Sunday":0,"Monday":0, "Tuesday":0,"Wednesday":0,"Thursday":0,"Friday":0,"Saturday":0});
+    const [visitorsbytime, setVisitorsByTime] = useState({"Last Day":0,"Last Week":0,"Last Month":0});
     const getActivities = async () => {
         const url = "http://localhost:8080/api/activity";
         const data  = await axios.get(url);
         const activityObjectList = data.data;
         let currentUserId = localStorage.getItem("token");
         currentUserId = currentUserId ? JSON.parse(localStorage.getItem("token")).data._id : undefined;
-        let userActivity = activityObjectList.filter((obj) => obj.userId === currentUserId);
+        let userActivity = activityObjectList; //activityObjectList.filter((obj) => obj.userId === currentUserId);
         console.log(userActivity)
         const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
         
 
         let a = [];
-        let tmp = {};
+        let tmp = {"Sunday":0,"Monday":0, "Tuesday":0,"Wednesday":0,"Thursday":0,"Friday":0,"Saturday":0};
+        let tmp2 = {"Last Day":0,"Last Week":0,"Last Month":0};
+        userActivity.map((item)=>{
+            const now = new Date();
+            const date = new Date(item.date);
+            const difference = now.getTime() - date.getTime();
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            if (days <= 1){
+                tmp2["Last Day"] += 1;
+            }else if(days <= 7){
+                tmp2["Last Week"] += 1;
+            }else if(days <= 30){
+                tmp2["Last Month"] += 1;
+            }
+            console.log(tmp2)
+        });
+        setVisitorsByTime(tmp2);
         userActivity.map((item)=>{
             const now = new Date();
             const date = new Date(item.date);
@@ -40,7 +57,7 @@ const Myanalytics = () => {
                 console.log(date.getDay());
                 let st = new Date(`2000-01-01T${item.startTime}:00`);
                 let et = new Date(`2000-01-01T${item.endTime}:00`);
-                tmp[daysOfWeek[(date.getDay()+1)%7]] = (et.getTime() - st.getTime()) / (1000 * 60 * 60);; 
+                tmp[daysOfWeek[(date.getDay()+1)%7]] += ((et.getTime() - st.getTime()) / (1000 * 60 * 60));
             }
 
 
@@ -54,17 +71,15 @@ const Myanalytics = () => {
     // const gethoursbyweek()
 
 
-
         useEffect(() => {
             getActivities();
           }, []);
-        
     const userActivityData = {
-        labels: ['San Jose', 'Santa clara', 'San Francisco', 'Los Angeles', 'San Diego'],
+        labels: Object.keys(visitorsbytime),
         datasets: [
           {
             label: 'User activity by location',
-            data: [300, 100, 200, 150, 250],
+            data: Object.values(visitorsbytime),
             backgroundColor: 'rgba(54, 162, 235, 0.5)',
             borderColor: 'rgba(54, 162, 235, 1)',
             borderWidth: 1,
@@ -91,13 +106,17 @@ const Myanalytics = () => {
           },
         ],
       };
-    
+
+    //   const LABELS = hoursbyweek.keys
+    //   console.log(hoursbyweek);
       const gymHoursData = {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        // console.log(hoursbyweek.keys());
+
+        labels:  Object.keys(hoursbyweek),
         datasets: [
           {
             label: 'Hours spent in the gym',
-            data: [3, 2, 4, 3.5, 5, 4, 6],
+            data: Object.values(hoursbyweek),
             backgroundColor: 'rgba(255, 206, 86, 0.5)',
             borderColor: 'rgba(255, 206, 86, 1)',
             borderWidth: 1,

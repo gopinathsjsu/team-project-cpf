@@ -26,8 +26,8 @@ Saketh Reddy Awala
 
 [Project Journal](https://docs.google.com/document/d/1CEIYorbqTy0vKhoMVC-NAvcvrorPO45jI5dUk8pBNMI/edit?usp=sharing)
 
-[Project Task Board]()
+[Project Task Board](https://github.com/orgs/gopinathsjsu/projects/71/views/1)
 
-[Sprint TAS + Burndown Chart](https://docs.google.com/spreadsheets/d/1eO75rQXyYkAQMrMZ3tLWUN1WJtMDc_81Scz2rtqvbQw/edit?usp=sharing)
+[Sprint Task + Burndown Chart](https://docs.google.com/spreadsheets/d/1eO75rQXyYkAQMrMZ3tLWUN1WJtMDc_81Scz2rtqvbQw/edit?usp=sharing)
 
 [UI Wireframes](https://docs.google.com/presentation/d/1hZv_-kjKb4ErgBH-kqwJhumV5-bDWGyOdBxTuRH-9Gc/edit?usp=sharing)

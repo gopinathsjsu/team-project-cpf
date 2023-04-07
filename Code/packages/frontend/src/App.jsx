@@ -19,7 +19,7 @@ import Class from "./components/Classschedule";
 import Schedule from "./components/Class";
 import Schedules from "./components/schedule";
 import Location from "./components/location";
-import Members from "./components/members";
+import Members from "./components/Members";
 import ClassAnalytics from "./components/ClassAnalytics";
 import MyEquipment from "./components/MyEquipment";
 import MyEquipments from "./components/MyEquipments"

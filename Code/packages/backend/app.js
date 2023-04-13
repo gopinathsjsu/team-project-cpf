@@ -22,6 +22,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/freeTrail", freeRoutes);
 app.use("/api/schedule", scheduleRoutes);
 app.use("/api/checkin", checkinRoutes);
+app.use("/api/class", classRoutes);
+
 
 const port = 8080;
 app.listen(port, console.log(`Listening on port ${port}...`));

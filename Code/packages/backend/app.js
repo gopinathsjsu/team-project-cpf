@@ -8,6 +8,9 @@ var authRoutes = require("./routes/auth");
 var scheduleRoutes = require("./routes/userschedule");
 var freeRoutes = require("./routes/freeTrail");
 var checkinRoutes = require("./routes/checkin");
+var equipmentRoutes = require("./routes/equipment");
+var activityRoutes = require("./routes/activity");
+
 
 // database connection
 connection();
@@ -23,6 +26,9 @@ app.use("/api/freeTrail", freeRoutes);
 app.use("/api/schedule", scheduleRoutes);
 app.use("/api/checkin", checkinRoutes);
 app.use("/api/class", classRoutes);
+app.use("/api/equipment", equipmentRoutes);
+app.use("/api/activity", activityRoutes);
+
 
 
 const port = 8080;

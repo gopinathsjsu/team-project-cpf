@@ -1,34 +1,37 @@
+
+var usersRouter = require("./routes/users");
+var authRoutes = require("./routes/auth");
+var freeRoutes = require("./routes/freetrail");
+var locationRoutes = require("./routes/location");
+var checkinRoutes = require("./routes/checkin");
+var classRoutes = require("./routes/class");
+var scheduleRoutes = require("./routes/userschedule");
+var equipmentRoutes = require("./routes/equipment")
+var activityRoutes = require("./routes/activity")
+
+
 require("dotenv").config();
 var express = require("express");
 var app = express();
 var cors = require("cors");
 var connection = require("./database");
-var usersRouter = require("./routes/users");
-var authRoutes = require("./routes/auth");
-var scheduleRoutes = require("./routes/userschedule");
-var freeRoutes = require("./routes/freeTrail");
-var checkinRoutes = require("./routes/checkin");
-var equipmentRoutes = require("./routes/equipment");
-var activityRoutes = require("./routes/activity");
 
-
-// database connection
 connection();
 
 // middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
 
-app.use("/api/location", locationRoutes);
+// routes
 app.use("/api/users", usersRouter);
 app.use("/api/auth", authRoutes);
 app.use("/api/freeTrail", freeRoutes);
-app.use("/api/schedule", scheduleRoutes);
+app.use("/api/location", locationRoutes);
 app.use("/api/checkin", checkinRoutes);
 app.use("/api/class", classRoutes);
+app.use("/api/schedule", scheduleRoutes);
 app.use("/api/equipment", equipmentRoutes);
 app.use("/api/activity", activityRoutes);
-
 
 
 const port = 8080;

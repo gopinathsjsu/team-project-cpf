@@ -17,7 +17,7 @@
 
 2. Farazuddin: Designed database and created view activities in time range, view members page, log hours on the equipments available. Tested all the components that I worked on ensuring complete coverage.
 
-3. Prajwal: Designed the architecture and deployment startegy. Built the wireframes after discussing, signup for classes in advance, pages for locations and members. Finally, handled testing and deployment the project using AWS ELB - Application Load Balancer with EC2 target group.
+3. Prajwal: Designed the architecture and deployment startegy. Built the wireframes after discussing, signup for classes in advance, pages for locations and members. Finally, handled testing and deployment of the project using AWS ELB - Application Load Balancer with EC2 target group.
 
 4. Saketh: Designed database and built components of analysis for classes and enrollment by time, hours spent in the gym by time period, number of visitors by time category. Tested out the components ensuring correctness.
 
@@ -61,5 +61,5 @@ Courage: From the first meeting, a space was created to allow for open conversat
 
 ![Deployment Diagram](Diagrams/deployment_diagram.png)
 
-![Component Diagram]((Diagrams/component_diagram.png))
+![Component Diagram](Diagrams/component_diagram.png)
 
